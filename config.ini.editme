@@ -1,5 +1,5 @@
 # Description: Configuration file
-# All strings must be between quoted
+# All strings must be between quotes
 
 [Btg]
 debug = False
@@ -12,7 +12,7 @@ modules_folder = "./modules/"
 log_found_file = "./log.txt"
 log_search_file = "./search.txt"
 # User-Agent for http requests
-user_agent = {'User-Agent': "Mozilla/5.0 (X11; Linux x86_64; rv:51.0) Gecko/20100101 Firefox/51.0",}
+user_agent = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36",}
 proxy_host = {"http": "","https": ""}
 # Requests timeout in seconds :
 requests_timeout = 15
@@ -106,3 +106,21 @@ nothink_enabled = True
 [RansomwareTracker]
 ransomwaretracker_enabled = True
 
+[Viper]
+viper_enabled = False
+viper_server = None
+
+[Virusshare]
+virusshare_enabled = False
+virusshare_username = None
+virusshare_password = None
+
+[Vxstream]
+vxstream_enabled = False
+# user_agent must not be changed
+vxstream_user_agent = {'User-agent': 'VxApi Connector'}
+# vxstream_api_keys_secret = [(api_keys, secret)]
+vxstream_api_keys_secret = []
+
+[IRISH]
+irish_enabled = True

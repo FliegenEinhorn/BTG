@@ -4,7 +4,7 @@ Not every IOC deserve to enter your internal MISP instance, for obvious quality 
 
 ![BTG with TOR IP](http://pix.toile-libre.org/upload/original/1482330236.png)
 
-This tool allows you to qualify one or more potential malicious markers of different type (URL, MD5, SHA1, SHA256, SHA512, IPv4, IPv6, domain etc..). You can run this tool with a Gnu/Linux environement. The Windows compatibility is currently working in BETA version.
+This tool allows you to qualify one or more potential malicious observables of various type (URL, MD5, SHA1, SHA256, SHA512, IPv4, IPv6, domain etc..). You can run this tool with a Gnu/Linux environement. The Windows compatibility is currently working in BETA version.
 
 BTG was born from a need for Conix's collaborators. During their activities, SOC and DFIR analysts face off a lot of information and metadata of multiple nature that they must classify as malicious or not.
 
@@ -21,6 +21,7 @@ Thus CERT-Conix created a tool allowing analysts to qualify such elements search
     CuckooSandbox API
     Cybercrime-tracker
     DShield
+    IRIS-H
     Lehigh
     Malekal
     Malshare
@@ -36,20 +37,18 @@ Thus CERT-Conix created a tool allowing analysts to qualify such elements search
     SpamHaus
     SSLBlacklist
     Tor exit nodes
+    Viper
+    VirusShare
     VirusTotal
     Vxvault
+    VxStream (hybrid-analysis)
     ZeusTracker
-
-#### Adding your module
-```
-cp modules/template.module modules/yourModuleName.py
-vim modules/yourModuleName.py
-```
-Change every CHANGEME in the template
-Then polulate the __init__ method with basic information and fill search() method with the logic needed to check self.ioc against the data provided by your database (basic logic is provided to guide you). Call to display() must be done to print results prettily.
 
 #### Installation
 ```
+sudo apt install python python-pip git
+git clone https://github.com/conix-security/BTG
+cd BTG
 sudo pip install -r requirements.txt
 cp config.ini.editme config.ini
 vim config.ini
