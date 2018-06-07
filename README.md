@@ -21,6 +21,7 @@ Thus CERT-Conix created a tool allowing analysts to qualify such elements search
     CuckooSandbox API
     Cybercrime-tracker
     DShield
+    Google Safe Browsing
     IRIS-H
     Lehigh
     Malekal
@@ -28,6 +29,7 @@ Thus CERT-Conix created a tool allowing analysts to qualify such elements search
     Malwaredomainlist
     Malwaredomains
     MalwareTeks
+    MetaDefender
     MISP (Malware Information Sharing Platform)
     MISP Crawler
     Nothink
@@ -46,10 +48,10 @@ Thus CERT-Conix created a tool allowing analysts to qualify such elements search
 
 #### Installation
 ```
-sudo apt install python python-pip git
+sudo apt install python3 python3-pip git
 git clone https://github.com/conix-security/BTG
 cd BTG
-sudo pip install -r requirements.txt
+sudo pip3 install -r requirements.txt
 cp config.ini.editme config.ini
 vim config.ini
 ```
@@ -57,9 +59,13 @@ Activate and fill licence key for modules you need to use.
 
 #### Usage
 ```
-python BTG.py http://mydomain.com 1a72dca1f6a961f528007ef04b6959d8 45.34.191.173
+python3 BTG.py http://mydomain.com 1a72dca1f6a961f528007ef04b6959d8 45.34.191.173
 ```
 
 #### Authors
-- Lancelot Bogard
+CERT-Conix folks:
+- Lancelot Bogard (v1)
+- Tanguy Becam (v2)
+- Alexandra Toussaint
+- Hicham Megherbi
 - Robin Marsollier

@@ -20,7 +20,10 @@
 
 import ast
 import os
-from ConfigParser import ConfigParser
+try:
+    from ConfigParser import ConfigParser
+except:
+    from configparser import ConfigParser
 from multiprocessing import Manager
 
 
@@ -40,5 +43,9 @@ class Config():
     def _parse_config():
         conf = ConfigParser()
         dir_path = os.path.dirname(os.path.realpath(__file__))
-        conf.read("%s/config.ini"%dir_path)
+        cfile="%s/config.ini"%dir_path
+        if not os.path.isfile(cfile):
+            print("BTG is not configured.\nPlease take care of config file : cp config.ini.editme config.ini; vim config.ini")
+            exit(0)
+        conf.read(cfile)
         Config.__args = {option: ast.literal_eval(conf.get(section, option)) for section in conf.sections() for option in conf.options(section)}
